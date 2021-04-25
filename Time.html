@@ -1,0 +1,32 @@
+<div dir="ltr" style="text-align: left;" trbidi="on">
+      <script>
+        var count = 30;
+        var counter;
+        function start(){
+          counter = setInterval(timer, 1200);
+        }
+        function timer(){
+          const counterStart = document.getElementById("displaySeconds");
+          const waitText = document.getElementById("waitText");
+          const downloadLink = document.getElementById("downloadLink");
+          counterStart.innerHTML = count;
+          count--;
+          if(count < 0){
+            clearInterval(counter);
+            window.location.href = "https://drive.google.com/uc?export=download&id=120o0MyNCCwyvZ-53IJkFkaVJGFePRudu";
+            waitText.style.display = "block";
+            setTimeout(function(){
+              waitText.style.display = "none";
+              downloadLink.style.display = "block";
+            }, 4000);
+            return false;
+          }
+        }
+        window.addEventListener("load", start, false);
+      </script>
+      <h3>Your download will begin in <b id="displaySeconds" style="color: #ff3d00;">30</b> seconds.<br /></h3>
+      <br />
+      <div id="waitText" style="display: none;"><b>Please wait, it's processing...</b></div>
+      <div id="downloadLink" style="display: none;"><b>If your download didn't start automatically, <a href="https://drive.google.com/uc?export=download&id=120o0MyNCCwyvZ-53IJkFkaVJGFePRudu">click here.</a></b></div>
+</div>
+<br/>
